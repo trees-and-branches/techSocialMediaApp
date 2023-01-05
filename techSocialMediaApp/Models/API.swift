@@ -8,5 +8,5 @@
 import Foundation
 
 struct API {
-    static var url = "http://localhost:4200"
+    static var url = "https://tech-social-media-app.fly.dev"
 }
