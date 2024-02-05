@@ -18,14 +18,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
+        
         #if DEBUG
 //        Uncomment the three lines below and enter your credentials to
 //        automatically sign in everytime you launch the app.
         
-//        emailTextField.text = ""
-//        passwordTextField.text = ""
-//        signInButtonTapped([])
+        emailTextField.text = "EVAN.OCHOA4872@STU.MTEC.EDU"
+        passwordTextField.text = "e5ed61c6-c8f9-4818-97f5-315799df25ac"
+        signInButtonTapped([])
         #endif
+        
     }
 
     @IBAction func signInButtonTapped(_ sender: Any) {

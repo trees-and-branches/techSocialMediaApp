@@ -45,6 +45,8 @@ class AuthenticationController {
         let user = try decoder.decode(User.self, from: data)
         
         User.current = user
+        
+        print("user UUID \(user.userUUID), user Secret \(user.secret)")
 
         return true
     }

@@ -16,7 +16,19 @@
 		A3DFFA4F2901B8F400A28B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DFFA4D2901B8F400A28B8C /* Main.storyboard */; };
 		A3DFFA512901B8F500A28B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3DFFA502901B8F500A28B8C /* Assets.xcassets */; };
 		A3DFFA542901B8F500A28B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DFFA522901B8F500A28B8C /* LaunchScreen.storyboard */; };
+		EA0AEFBB2B7132F2004D4AA6 /* techSocialMediaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEFBA2B7132F2004D4AA6 /* techSocialMediaAppTests.swift */; };
+		EA712AC02B714EFC00C8C6C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA0AEFBC2B7132F2004D4AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3DFFA3C2901B8F400A28B8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3DFFA432901B8F400A28B8C;
+			remoteInfo = techSocialMediaApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A3C2D4CC2908297000C0AF5F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -30,10 +42,20 @@
 		A3DFFA502901B8F500A28B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3DFFA532901B8F500A28B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3DFFA552901B8F500A28B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA0AEFB82B7132F2004D4AA6 /* techSocialMediaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = techSocialMediaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0AEFBA2B7132F2004D4AA6 /* techSocialMediaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = techSocialMediaAppTests.swift; sourceTree = "<group>"; };
+		EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A3DFFA412901B8F400A28B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0AEFB52B7132F2004D4AA6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A3DFFA462901B8F400A28B8C /* techSocialMediaApp */,
+				EA0AEFB92B7132F2004D4AA6 /* techSocialMediaAppTests */,
 				A3DFFA452901B8F400A28B8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A3DFFA442901B8F400A28B8C /* techSocialMediaApp.app */,
+				EA0AEFB82B7132F2004D4AA6 /* techSocialMediaAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,12 +108,21 @@
 				A3DFFA472901B8F400A28B8C /* AppDelegate.swift */,
 				A3DFFA492901B8F400A28B8C /* SceneDelegate.swift */,
 				A3DFFA4B2901B8F400A28B8C /* ViewController.swift */,
+				EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */,
 				A3DFFA4D2901B8F400A28B8C /* Main.storyboard */,
 				A3DFFA502901B8F500A28B8C /* Assets.xcassets */,
 				A3DFFA522901B8F500A28B8C /* LaunchScreen.storyboard */,
 				A3DFFA552901B8F500A28B8C /* Info.plist */,
 			);
 			path = techSocialMediaApp;
+			sourceTree = "<group>";
+		};
+		EA0AEFB92B7132F2004D4AA6 /* techSocialMediaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA0AEFBA2B7132F2004D4AA6 /* techSocialMediaAppTests.swift */,
+			);
+			path = techSocialMediaAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +147,24 @@
 			productReference = A3DFFA442901B8F400A28B8C /* techSocialMediaApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EA0AEFB72B7132F2004D4AA6 /* techSocialMediaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA0AEFC02B7132F2004D4AA6 /* Build configuration list for PBXNativeTarget "techSocialMediaAppTests" */;
+			buildPhases = (
+				EA0AEFB42B7132F2004D4AA6 /* Sources */,
+				EA0AEFB52B7132F2004D4AA6 /* Frameworks */,
+				EA0AEFB62B7132F2004D4AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA0AEFBD2B7132F2004D4AA6 /* PBXTargetDependency */,
+			);
+			name = techSocialMediaAppTests;
+			productName = techSocialMediaAppTests;
+			productReference = EA0AEFB82B7132F2004D4AA6 /* techSocialMediaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -121,11 +172,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					A3DFFA432901B8F400A28B8C = {
 						CreatedOnToolsVersion = 14.0.1;
+					};
+					EA0AEFB72B7132F2004D4AA6 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = A3DFFA432901B8F400A28B8C;
 					};
 				};
 			};
@@ -145,6 +200,7 @@
 			projectRoot = "";
 			targets = (
 				A3DFFA432901B8F400A28B8C /* techSocialMediaApp */,
+				EA0AEFB72B7132F2004D4AA6 /* techSocialMediaAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +216,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA0AEFB62B7132F2004D4AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -171,12 +234,29 @@
 				A3DFFA4C2901B8F400A28B8C /* ViewController.swift in Sources */,
 				A3DFFA482901B8F400A28B8C /* AppDelegate.swift in Sources */,
 				A3C2D4CF29082B1300C0AF5F /* AuthenticationController.swift in Sources */,
+				EA712AC02B714EFC00C8C6C9 /* ProfileViewController.swift in Sources */,
 				A3C2D4D129082BF900C0AF5F /* API.swift in Sources */,
 				A3DFFA4A2901B8F400A28B8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA0AEFB42B7132F2004D4AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0AEFBB2B7132F2004D4AA6 /* techSocialMediaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA0AEFBD2B7132F2004D4AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3DFFA432901B8F400A28B8C /* techSocialMediaApp */;
+			targetProxy = EA0AEFBC2B7132F2004D4AA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A3DFFA4D2901B8F400A28B8C /* Main.storyboard */ = {
@@ -368,6 +448,53 @@
 			};
 			name = Release;
 		};
+		EA0AEFBE2B7132F2004D4AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 49SY96BT5A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ee.techSocialMediaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/techSocialMediaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/techSocialMediaApp";
+			};
+			name = Debug;
+		};
+		EA0AEFBF2B7132F2004D4AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 49SY96BT5A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ee.techSocialMediaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/techSocialMediaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/techSocialMediaApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -385,6 +512,15 @@
 			buildConfigurations = (
 				A3DFFA592901B8F500A28B8C /* Debug */,
 				A3DFFA5A2901B8F500A28B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA0AEFC02B7132F2004D4AA6 /* Build configuration list for PBXNativeTarget "techSocialMediaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0AEFBE2B7132F2004D4AA6 /* Debug */,
+				EA0AEFBF2B7132F2004D4AA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
