@@ -14,9 +14,7 @@ struct Profile: Codable {
     var userUUID: UUID
     var bio: String?
     var techInterests: String?
-    var posts: [Post?]
+    var posts: Posts? // this may need to be fixed.
 }
 
-struct Post: Codable {
-    
-}
+

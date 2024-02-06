@@ -60,11 +60,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 }
 extension ProfileViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell(style: .subtitle, reuseIdentifier: "PostCell")
     }
     
 }
