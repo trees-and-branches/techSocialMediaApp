@@ -19,18 +19,20 @@ struct APIController {
     
     static let shared = APIController()
     
-    func fetchProfile(for user: String) async throws -> User {
+    func fetchProfile(for user: String) async throws -> Profile {
         
         let session = URLSession.shared
         
         let userQI = URLQueryItem(name: "userUUID", value: user)
-        let secretQI = URLQueryItem(name: "userSecret", value: String(describing: User.current?.secret))
+            let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
+
         var url = URL(string: "\(API.url)/userProfile")!
         url.append(queryItems: [userQI, secretQI])
         
         var request = URLRequest(url: url)
         // Add json data to the body of the request. Also clarify that this is a POST request
-//        request.httpBody = try JSONSerialization.data(withJSONObject: credentials, options: .prettyPrinted)
+        // request.httpBody = try JSONSerialization.data(withJSONObject: credentials, options: .prettyPrinted)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -45,7 +47,7 @@ struct APIController {
         // Decode our response data to a usable User struct
         let decoder = JSONDecoder()
         
-        return try decoder.decode(User.self, from: data)
+        return try decoder.decode(Profile.self, from: data)
         
         
     }

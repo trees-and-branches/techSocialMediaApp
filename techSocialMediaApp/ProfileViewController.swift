@@ -7,18 +7,27 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let apiController = APIController()
     let autController = AuthenticationController()
+    var profile: Profile?
 
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var firstLastLabel: UILabel!
+    
+    @IBOutlet weak var bio: UILabel!
+    @IBOutlet weak var techInterests: UILabel!
+    
+    @IBOutlet weak var postsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Task {
             do {
-                let user = try await apiController.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
-                print(user)
+                profile = try await apiController.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
+                updateUI(with: profile)
                 
             } catch {
                 print(error)
@@ -26,6 +35,15 @@ class ProfileViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    func updateUI(with profile: Profile?) {
+        guard let profile else { return }
+        userNameLabel.text = profile.userName
+        firstLastLabel.text = "\(profile.firstName) \(profile.lastName)"
+        bio.text = profile.bio
+        techInterests.text = profile.techInterests
+        
     }
     
 
@@ -39,4 +57,14 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
+extension ProfileViewController {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
 }

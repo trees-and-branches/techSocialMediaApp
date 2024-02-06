@@ -18,6 +18,7 @@
 		A3DFFA542901B8F500A28B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DFFA522901B8F500A28B8C /* LaunchScreen.storyboard */; };
 		EA0AEFBB2B7132F2004D4AA6 /* techSocialMediaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEFBA2B7132F2004D4AA6 /* techSocialMediaAppTests.swift */; };
 		EA712AC02B714EFC00C8C6C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */; };
+		EA712AC22B728EE400C8C6C9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AC12B728EE400C8C6C9 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		EA0AEFB82B7132F2004D4AA6 /* techSocialMediaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = techSocialMediaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0AEFBA2B7132F2004D4AA6 /* techSocialMediaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = techSocialMediaAppTests.swift; sourceTree = "<group>"; };
 		EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EA712AC12B728EE400C8C6C9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				A3C2D4CC2908297000C0AF5F /* User.swift */,
 				A3C2D4D029082BF900C0AF5F /* API.swift */,
+				EA712AC12B728EE400C8C6C9 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C2D4CD2908297000C0AF5F /* User.swift in Sources */,
+				EA712AC22B728EE400C8C6C9 /* Profile.swift in Sources */,
 				A3DFFA4C2901B8F400A28B8C /* ViewController.swift in Sources */,
 				A3DFFA482901B8F400A28B8C /* AppDelegate.swift in Sources */,
 				A3C2D4CF29082B1300C0AF5F /* AuthenticationController.swift in Sources */,

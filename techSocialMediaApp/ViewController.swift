@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         #endif
         
     }
+    
 
     @IBAction func signInButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
                 if(success) {
                     // Change the navigation stack to make the next view controller be the root view controller
                     // We do this because we dont want a back button to the sign in page.
+                    
                     let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "userSignedIn")
                     let viewControllers = [viewController]
                     self.navigationController?.setViewControllers(viewControllers, animated: true)

@@ -29,4 +29,3 @@ struct User: Decodable, Encodable {
 
 
 let meUser = User(firstName: "Evan", lastName: "Ochoa", email: "EVAN.OCHOA4872@STU.MTEC.EDU", user: "EE9E0B40-791B-4730-B783-0B2B8C09AB20", secret:"911A6300-DC3E-4737-9C19-6943CC7D4A88", userName: "EvanOchoa")
-

@@ -46,7 +46,7 @@ class AuthenticationController {
         
         User.current = user
         
-        print("user UUID \(user.userUUID), user Secret \(user.secret)")
+//        print("user UUID \(user.userUUID), user Secret \(user.secret)")
 
         return true
     }
