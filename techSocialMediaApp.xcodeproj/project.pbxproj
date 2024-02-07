@@ -95,7 +95,6 @@
 		A3DFFA3B2901B8F400A28B8C = {
 			isa = PBXGroup;
 			children = (
-				EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */,
 				A3DFFA462901B8F400A28B8C /* techSocialMediaApp */,
 				EA0AEFB92B7132F2004D4AA6 /* techSocialMediaAppTests */,
 				A3DFFA452901B8F400A28B8C /* Products */,
@@ -119,8 +118,7 @@
 				A3DFFA472901B8F400A28B8C /* AppDelegate.swift */,
 				A3DFFA492901B8F400A28B8C /* SceneDelegate.swift */,
 				A3DFFA4B2901B8F400A28B8C /* LoginViewController.swift */,
-				EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */,
-				EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */,
+				EA712ACD2B73D57E00C8C6C9 /* view */,
 				A3DFFA4D2901B8F400A28B8C /* Main.storyboard */,
 				A3DFFA502901B8F500A28B8C /* Assets.xcassets */,
 				A3DFFA522901B8F500A28B8C /* LaunchScreen.storyboard */,
@@ -135,6 +133,16 @@
 				EA0AEFBA2B7132F2004D4AA6 /* techSocialMediaAppTests.swift */,
 			);
 			path = techSocialMediaAppTests;
+			sourceTree = "<group>";
+		};
+		EA712ACD2B73D57E00C8C6C9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */,
+				EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */,
+				EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

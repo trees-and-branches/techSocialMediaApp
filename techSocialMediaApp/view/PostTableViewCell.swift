@@ -11,7 +11,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postUserLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postBodyLabel: UILabel!
-    
+    @IBOutlet weak var postIDLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +21,12 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func update(with post: Post) {
+        postUserLabel.text = post.authorUserName
+        postTitleLabel.text = post.title
+        postBodyLabel.text = post.body
+        postIDLabel.text = String(post.id)
     }
 
 }
