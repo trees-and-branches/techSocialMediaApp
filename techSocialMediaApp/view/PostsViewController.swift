@@ -44,8 +44,11 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 let cell = postsTableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostTableViewCell
+    
     let post = posts[indexPath.row]
     cell.update(with: post)
+    
+    
     
     return cell
 }
