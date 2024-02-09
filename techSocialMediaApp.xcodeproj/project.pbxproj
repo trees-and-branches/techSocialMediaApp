@@ -22,6 +22,7 @@
 		EA712AC42B729AB700C8C6C9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AC32B729AB700C8C6C9 /* Post.swift */; };
 		EA712AC82B72A04F00C8C6C9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */; };
 		EA712ACA2B72A16400C8C6C9 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */; };
+		EA712ACF2B73DFA200C8C6C9 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712ACE2B73DFA200C8C6C9 /* Controllers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		EA712AC32B729AB700C8C6C9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		EA712ACE2B73DFA200C8C6C9 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,8 @@
 		A3C2D4CA2908293800C0AF5F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A3C2D4D029082BF900C0AF5F /* API.swift */,
+				EA712ACE2B73DFA200C8C6C9 /* Controllers.swift */,
 				A3C2D4CE29082B1300C0AF5F /* AuthenticationController.swift */,
 			);
 			path = Network;
@@ -85,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				A3C2D4CC2908297000C0AF5F /* User.swift */,
-				A3C2D4D029082BF900C0AF5F /* API.swift */,
 				EA712AC12B728EE400C8C6C9 /* Profile.swift */,
 				EA712AC32B729AB700C8C6C9 /* Post.swift */,
 			);
@@ -257,6 +260,7 @@
 				A3C2D4CF29082B1300C0AF5F /* AuthenticationController.swift in Sources */,
 				EA712ACA2B72A16400C8C6C9 /* PostsViewController.swift in Sources */,
 				EA712AC02B714EFC00C8C6C9 /* ProfileViewController.swift in Sources */,
+				EA712ACF2B73DFA200C8C6C9 /* Controllers.swift in Sources */,
 				EA712AC42B729AB700C8C6C9 /* Post.swift in Sources */,
 				EA712AC82B72A04F00C8C6C9 /* PostTableViewCell.swift in Sources */,
 				A3C2D4D129082BF900C0AF5F /* API.swift in Sources */,

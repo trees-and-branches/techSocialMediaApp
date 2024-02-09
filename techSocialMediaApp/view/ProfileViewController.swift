@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let apiController = APIController()
+    let profileController = ProfileController()
     let autController = AuthenticationController()
     var profile: Profile?
 
@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         Task {
             do {
-                profile = try await apiController.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
+                profile = try await profileController.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
                 updateUI(with: profile)
                 
             } catch {
