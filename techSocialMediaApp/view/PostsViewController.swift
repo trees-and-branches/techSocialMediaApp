@@ -43,7 +43,21 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-let cell = postsTableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostTableViewCell
+    let cell = postsTableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostTableViewCell
+    if indexPath.row % 18 == 0 {
+        Task {
+            do {
+                let initialPosts = try await PostController.shared.fetchPosts(for: nil)
+                posts += initialPosts
+                DispatchQueue.main.async {
+                    self.postsTableView.reloadData()
+                }
+            } catch {
+                
+            }
+        }
+    }
+    
     
     let post = posts[indexPath.row]
     cell.update(with: post)
