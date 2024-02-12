@@ -87,6 +87,8 @@ struct PostController {
         // Decode our response data to a usable User struct
         let decoder = JSONDecoder()
         
+        print("printing for page \(pageString)")
+        
         return try decoder.decode([Post].self, from: data)
             
         

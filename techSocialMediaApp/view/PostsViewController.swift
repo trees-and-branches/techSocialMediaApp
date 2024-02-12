@@ -54,7 +54,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
            
            print("\(indexPath.row) indexpath")
            if indexPath.row == posts.count - 1, hasMorePosts { // Last cell
-               let page = (posts.count / 20) + 1
+               let page = (posts.count / 20)
                loadMorePosts(for: page)
            }
 
@@ -80,9 +80,11 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
                             self.hasMorePosts = false
                         } else {
                             let startIndex = self.posts.count
+                            print("new posts: \(newPosts)")
                             self.posts.append(contentsOf: newPosts)
                             let endIndex = self.posts.count - 1
                             let indexPaths = (startIndex...endIndex).map { IndexPath(row: $0, section: 0) }
+                            
                             self.postsTableView.insertRows(at: indexPaths, with: .automatic)
                             self.postsTableView.reloadData()
                         }
