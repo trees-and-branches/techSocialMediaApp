@@ -17,4 +17,7 @@ struct Profile: Codable {
 //    var posts: Posts? // this may need to be fixed.
 }
 
+struct ProfileResponse: Codable {
+    let success: Bool
+}
 

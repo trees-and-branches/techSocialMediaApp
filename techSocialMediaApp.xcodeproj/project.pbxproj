@@ -23,6 +23,8 @@
 		EA712AC82B72A04F00C8C6C9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */; };
 		EA712ACA2B72A16400C8C6C9 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */; };
 		EA712ACF2B73DFA200C8C6C9 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712ACE2B73DFA200C8C6C9 /* Controllers.swift */; };
+		EA712AD12B7A844500C8C6C9 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AD02B7A844500C8C6C9 /* ProfileEditViewController.swift */; };
+		EA712AD32B7BD3B300C8C6C9 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA712AD22B7BD3B300C8C6C9 /* PostTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		EA712ACE2B73DFA200C8C6C9 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
+		EA712AD02B7A844500C8C6C9 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		EA712AD22B7BD3B300C8C6C9 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */,
 				EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */,
 				EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */,
+				EA712AD02B7A844500C8C6C9 /* ProfileEditViewController.swift */,
+				EA712AD22B7BD3B300C8C6C9 /* PostTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				A3DFFA542901B8F500A28B8C /* LaunchScreen.storyboard in Resources */,
 				A3DFFA512901B8F500A28B8C /* Assets.xcassets in Resources */,
 				A3DFFA4F2901B8F400A28B8C /* Main.storyboard in Resources */,
+				EA712AD32B7BD3B300C8C6C9 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +271,7 @@
 				EA712AC42B729AB700C8C6C9 /* Post.swift in Sources */,
 				EA712AC82B72A04F00C8C6C9 /* PostTableViewCell.swift in Sources */,
 				A3C2D4D129082BF900C0AF5F /* API.swift in Sources */,
+				EA712AD12B7A844500C8C6C9 /* ProfileEditViewController.swift in Sources */,
 				A3DFFA4A2901B8F400A28B8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let profileController = ProfileController()
     let autController = AuthenticationController()
     var profile: Profile?
+    var posts: [Post]?
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var firstLastLabel: UILabel!
@@ -37,6 +38,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+//        guard let profile else { return }
+        let destination = segue.destination as! ProfileEditViewController
+        destination.profile = profile
+        
+    }
+    
     func updateUI(with profile: Profile?) {
         guard let profile else { return }
         userNameLabel.text = profile.userName
@@ -46,6 +55,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    @IBAction func postChangesAndUnwind(sender: UIStoryboardSegue) {
+        print("unwind:\(sender)")
+        if let profileEditViewController = sender.source as? ProfileEditViewController {
+            Task {
+                try await profileEditViewController.updateProfile()
+                
+            }
+        }
+
+    }
 
     /*
     // MARK: - Navigation

@@ -20,8 +20,13 @@ class PostsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let postNib = UINib.init(nibName: "PostTableViewCell", bundle: nil)
+        self.postsTableView.register(postNib, forCellReuseIdentifier: "PostCell")
+        
         postsTableView.delegate = self
         postsTableView.dataSource = self
+
         
         Task {
             do {
@@ -66,7 +71,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
            
            return cell
        }
-
+// TODO: this function, or it's callers must be fixed so the bottom of the posts page doesn't keep populating with the same posts
         private func loadMorePosts(for page: Int) {
             guard !isFetchingPosts, hasMorePosts else { return }
             
