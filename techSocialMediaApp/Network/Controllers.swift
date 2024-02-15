@@ -16,11 +16,11 @@ struct ProfileController {  // I would like to Create a generic protocol for thi
     
     static let shared = ProfileController()
     
-    func fetchProfile(for user: String) async throws -> Profile {
+    func fetchProfile(for userID: String) async throws -> Profile {
         
         let session = URLSession.shared
         
-        let userQI = URLQueryItem(name: "userUUID", value: user)
+        let userQI = URLQueryItem(name: "userUUID", value: userID)
         let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
         let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
         
@@ -49,7 +49,7 @@ struct ProfileController {  // I would like to Create a generic protocol for thi
         
     }
     
-    func updateProfile(for profile: Profile) async throws {
+    func updateProfile(for profile: Profile) async throws { // TODO: find out why the nil coalescing isnt working here
         guard let user = User.current else { return }
         var url = URL(string: "\(API.url)/updateProfile")!
         let session = URLSession.shared
@@ -123,7 +123,69 @@ struct PostController {
         print("printing for page \(pageString)")
         
         return try decoder.decode([Post].self, from: data)
-            
+    
+    }
+    
+    func fetchPosts(for userID: String, _ pageNum: Int?) async throws -> [Post] {
         
+        var url = URL(string: "\(API.url)/userPosts")!
+        let session = URLSession.shared
+        
+        let userQI = URLQueryItem(name: "userUUID", value: userID)
+        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
+        
+        if let pageNum {
+            let pageNumQI = URLQueryItem(name: "pageNumber", value: String(pageNum))
+            url.append(queryItems: [pageNumQI])
+        }
+        
+        url.append(queryItems: [userQI, secretQI])
+        
+        print(url)
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await session.data(for: request)
+        
+        // Ensure we had a good response (status 200)
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ApiError.couldNotFetch
+        }
+        
+        // Decode our response data to a usable User struct
+        let decoder = JSONDecoder()
+        
+        
+        return try decoder.decode([Post].self, from: data)
+        
+    }
+    
+    func submitPost(title: String, body: String) async throws {
+        var url = URL(string: "\(API.url)/createPost")!
+        let session = URLSession.shared
+        
+        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        
+        let httpbody: [String: Any] = [ "userSecret" : userSecretValue , "post": [ "title": title, "body": body]]
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.httpBody = try JSONSerialization.data(withJSONObject: httpbody, options: .prettyPrinted)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await session.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ApiError.couldNotPost
+        }
+        
+        let decoder = JSONDecoder()
+        
+        print("post subit response \(try decoder.decode(Post.self,from: data))")
     }
 }

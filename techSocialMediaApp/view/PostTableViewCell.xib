@@ -49,14 +49,43 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postBody" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iki-zY-A51">
-                                    <rect key="frame" x="0.0" y="39.666666666666664" width="73" height="111.33333333333334"/>
+                                    <rect key="frame" x="0.0" y="39.666666666666664" width="73" height="89.333333333333343"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sE1-MZ-XyT">
+                                    <rect key="frame" x="0.0" y="129" width="486" height="22"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxQ-Xg-8IJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O6-cU-8ai">
+                                            <rect key="frame" x="370" y="0.0" width="74.666666666666686" height="22"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Button" image="heart" catalog="system"/>
+                                            <state key="selected" image="heart."/>
+                                            <state key="highlighted" image="heart.fill" catalog="system"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it1-YL-YWp">
+                                            <rect key="frame" x="444.66666666666669" y="0.0" width="41.333333333333314" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="sE1-MZ-XyT" secondAttribute="bottom" id="5Cu-tI-lTW"/>
+                                <constraint firstItem="iki-zY-A51" firstAttribute="top" secondItem="sIm-Sl-KFn" secondAttribute="bottom" id="JiG-1X-GYq"/>
+                                <constraint firstItem="sE1-MZ-XyT" firstAttribute="leading" secondItem="otp-cR-3zj" secondAttribute="leading" id="QLA-a6-yM8"/>
+                                <constraint firstItem="sE1-MZ-XyT" firstAttribute="top" secondItem="iki-zY-A51" secondAttribute="bottom" id="Ud7-Uq-drc"/>
                                 <constraint firstAttribute="trailing" secondItem="4Kx-WS-vTM" secondAttribute="trailing" id="Wxu-oR-goD"/>
+                                <constraint firstAttribute="trailing" secondItem="sE1-MZ-XyT" secondAttribute="trailing" id="tve-sv-7nf"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -82,14 +111,20 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="postBodyLabel" destination="iki-zY-A51" id="6tS-50-g5F"/>
+                <outlet property="postCommentsLabel" destination="BxQ-Xg-8IJ" id="y5R-NP-vVA"/>
                 <outlet property="postIDLabel" destination="Dn0-ci-PIp" id="pL0-zt-Z6c"/>
+                <outlet property="postLikeButton" destination="3O6-cU-8ai" id="Gmz-Kk-xXc"/>
+                <outlet property="postLikesLabel" destination="it1-YL-YWp" id="iON-c8-rWV"/>
                 <outlet property="postTitleLabel" destination="sIm-Sl-KFn" id="iiv-ew-itZ"/>
                 <outlet property="postUserLabel" destination="Lgp-h8-Wd8" id="Ww0-gh-neH"/>
             </connections>
-            <point key="canvasLocation" x="160.30534351145039" y="144.01408450704227"/>
+            <point key="canvasLocation" x="162" y="65"/>
         </view>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart." width="128" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

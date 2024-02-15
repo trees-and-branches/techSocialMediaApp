@@ -260,6 +260,7 @@
                     <connections>
                         <segue destination="XA1-qI-cMe" kind="relationship" relationship="viewControllers" id="4lu-RF-oyd"/>
                         <segue destination="ZNs-7s-Ybs" kind="relationship" relationship="viewControllers" id="U3p-BX-v4U"/>
+                        <segue destination="GUc-ER-eS8" kind="relationship" relationship="viewControllers" id="yAA-zD-FQF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgb-8t-jpO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -374,6 +375,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfL-kb-0Mj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3047.6923076923076" y="742.89099526066343"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Ybq-A3-9qv">
+            <objects>
+                <viewController id="GUc-ER-eS8" customClass="CreateEditPostViewController" customModule="techSocialMediaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cEd-x8-Vxo">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="THD-yn-3bR">
+                                <rect key="frame" x="10" y="87" width="370" height="123.66666666666669"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsn-wW-RUm">
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="29.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="body" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-Gy-MXj">
+                                        <rect key="frame" x="0.0" y="29.333333333333329" width="370" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Sg7-OJ-dnF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hv1-WV-U4G">
+                                        <rect key="frame" x="0.0" y="89.333333333333343" width="370" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="submit"/>
+                                        <connections>
+                                            <action selector="submitTapped:" destination="GUc-ER-eS8" eventType="touchUpInside" id="0he-Fd-aQ1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ylp-Od-YZx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ylp-Od-YZx" firstAttribute="trailing" secondItem="THD-yn-3bR" secondAttribute="trailing" constant="10" id="DOx-UT-hv1"/>
+                            <constraint firstItem="THD-yn-3bR" firstAttribute="top" secondItem="Ylp-Od-YZx" secondAttribute="top" constant="40" id="QsQ-AW-zrs"/>
+                            <constraint firstItem="THD-yn-3bR" firstAttribute="leading" secondItem="Ylp-Od-YZx" secondAttribute="leading" constant="10" id="V3s-R8-Gdi"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3Wl-LI-pjE"/>
+                    <connections>
+                        <outlet property="bodyLabel" destination="9Zf-Gy-MXj" id="WeG-Ms-n8G"/>
+                        <outlet property="titleLabel" destination="wsn-wW-RUm" id="d8S-eS-aCP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Xm-Lg-TkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="1479"/>
         </scene>
     </scenes>
     <resources>

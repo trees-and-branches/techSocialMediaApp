@@ -25,6 +25,7 @@
 		EA712ACF2B73DFA200C8C6C9 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712ACE2B73DFA200C8C6C9 /* Controllers.swift */; };
 		EA712AD12B7A844500C8C6C9 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA712AD02B7A844500C8C6C9 /* ProfileEditViewController.swift */; };
 		EA712AD32B7BD3B300C8C6C9 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA712AD22B7BD3B300C8C6C9 /* PostTableViewCell.xib */; };
+		EAC3E41D2B7E7FE8002289A2 /* CreateEditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3E41C2B7E7FE8002289A2 /* CreateEditPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		EA712ACE2B73DFA200C8C6C9 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
 		EA712AD02B7A844500C8C6C9 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		EA712AD22B7BD3B300C8C6C9 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		EAC3E41C2B7E7FE8002289A2 /* CreateEditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		A3DFFA3B2901B8F400A28B8C = {
 			isa = PBXGroup;
 			children = (
+				EAC3E41C2B7E7FE8002289A2 /* CreateEditPostViewController.swift */,
 				A3DFFA462901B8F400A28B8C /* techSocialMediaApp */,
 				EA0AEFB92B7132F2004D4AA6 /* techSocialMediaAppTests */,
 				A3DFFA452901B8F400A28B8C /* Products */,
@@ -264,6 +267,7 @@
 				EA712AC22B728EE400C8C6C9 /* Profile.swift in Sources */,
 				A3DFFA4C2901B8F400A28B8C /* LoginViewController.swift in Sources */,
 				A3DFFA482901B8F400A28B8C /* AppDelegate.swift in Sources */,
+				EAC3E41D2B7E7FE8002289A2 /* CreateEditPostViewController.swift in Sources */,
 				A3C2D4CF29082B1300C0AF5F /* AuthenticationController.swift in Sources */,
 				EA712ACA2B72A16400C8C6C9 /* PostsViewController.swift in Sources */,
 				EA712AC02B714EFC00C8C6C9 /* ProfileViewController.swift in Sources */,

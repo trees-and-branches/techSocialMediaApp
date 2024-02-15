@@ -7,12 +7,14 @@
 
 import UIKit
 
+// TODO: gotta make this same vc for outside users
+
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let profileController = ProfileController()
+//    let profileController = ProfileController()
     let autController = AuthenticationController()
     var profile: Profile?
-    var posts: [Post]?
+    var posts: [Post] = []
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var firstLastLabel: UILabel!
@@ -25,10 +27,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let postNib = UINib.init(nibName: "PostTableViewCell", bundle: nil)
+        self.postsTableView.register(postNib, forCellReuseIdentifier: "PostCell")
+        
+        postsTableView.dataSource = self
+        postsTableView.delegate = self
+        
         Task {
             do {
-                profile = try await profileController.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
+                profile = try await ProfileController.shared.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
                 updateUI(with: profile)
+                
+                let initialPosts = try await PostController.shared.fetchPosts(for: "EE9E0B40-791B-4730-B783-0B2B8C09AB20", nil) // gotta actually get the value instead of hardcoding this... later
+                posts += initialPosts
+                postsTableView.reloadData()
+                
                 
             } catch {
                 print(error)
@@ -61,8 +74,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             Task {
                 try await profileEditViewController.updateProfile()
                 
+                profile = try await ProfileController.shared.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
+                updateUI(with: profile)
             }
+            
+            
         }
+        
 
     }
 
@@ -79,11 +97,28 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 }
 extension ProfileViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell(style: .subtitle, reuseIdentifier: "PostCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
+        
+        
+        // Check if we need to load more posts
+        
+//        print("\(indexPath.row) indexpath")
+//        if indexPath.row == posts.count - 1, hasMorePosts { // Last cell
+//            let page = (posts.count / 20)
+//            loadMorePosts(for: page)
+//        }
+
+//               else {
+//               hasMorePosts = true
+//           }
+        let post = posts[indexPath.row]
+        cell.update(with: post)
+        
+        return cell
     }
     
 }

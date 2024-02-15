@@ -25,19 +25,7 @@ class ProfileEditViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-    
-    
-//    func updateProfile() async throws {
-//        guard profile != nil else { return }
-//
-//        profile.userName = userNameTextfield.text ?? ""
-//        profile.bio = bioTextField.text ?? ""
-//        profile.techInterests = techInterestsTextField.text ?? ""
-//
-//        if let profile = profile {
-//            try await ProfileController.shared.updateProfile(for: profile)
-//        }
-//    }
+
     func updateProfile() async throws {
         // Unwrap `profile` at the beginning and use it directly inside the block.
         guard let profile = self.profile,
@@ -55,17 +43,5 @@ class ProfileEditViewController: UIViewController {
         // Since `profile` is already unwrapped, you can directly use it in the function call.
         try await ProfileController.shared.updateProfile(for: theProfile)
     }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
