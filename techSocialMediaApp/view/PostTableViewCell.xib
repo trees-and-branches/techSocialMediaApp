@@ -31,7 +31,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-ci-PIp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqJ-6S-xNC">
                                             <rect key="frame" x="28.666666666666657" y="0.0" width="457.33333333333337" height="15.666666666666666"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -39,15 +39,26 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIm-Sl-KFn">
-                                    <rect key="frame" x="0.0" y="15.666666666666664" width="89.333333333333329" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="1WL-U8-seL"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vh-k1-zTp">
+                                    <rect key="frame" x="0.0" y="15.666666666666664" width="102.33333333333333" height="24"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIm-Sl-KFn">
+                                            <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="1WL-U8-seL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-ci-PIp">
+                                            <rect key="frame" x="89.333333333333329" y="0.0" width="13" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postBody" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iki-zY-A51">
                                     <rect key="frame" x="0.0" y="39.666666666666664" width="73" height="89.333333333333343"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -81,7 +92,6 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="sE1-MZ-XyT" secondAttribute="bottom" id="5Cu-tI-lTW"/>
-                                <constraint firstItem="iki-zY-A51" firstAttribute="top" secondItem="sIm-Sl-KFn" secondAttribute="bottom" id="JiG-1X-GYq"/>
                                 <constraint firstItem="sE1-MZ-XyT" firstAttribute="leading" secondItem="otp-cR-3zj" secondAttribute="leading" id="QLA-a6-yM8"/>
                                 <constraint firstItem="sE1-MZ-XyT" firstAttribute="top" secondItem="iki-zY-A51" secondAttribute="bottom" id="Ud7-Uq-drc"/>
                                 <constraint firstAttribute="trailing" secondItem="4Kx-WS-vTM" secondAttribute="trailing" id="Wxu-oR-goD"/>
@@ -112,6 +122,7 @@
             <connections>
                 <outlet property="postBodyLabel" destination="iki-zY-A51" id="6tS-50-g5F"/>
                 <outlet property="postCommentsLabel" destination="BxQ-Xg-8IJ" id="y5R-NP-vVA"/>
+                <outlet property="postDateLabel" destination="LqJ-6S-xNC" id="no1-wf-TKC"/>
                 <outlet property="postIDLabel" destination="Dn0-ci-PIp" id="pL0-zt-Z6c"/>
                 <outlet property="postLikeButton" destination="3O6-cU-8ai" id="Gmz-Kk-xXc"/>
                 <outlet property="postLikesLabel" destination="it1-YL-YWp" id="iON-c8-rWV"/>
@@ -126,7 +137,7 @@
         <image name="heart." width="128" height="128"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

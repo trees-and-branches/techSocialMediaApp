@@ -182,6 +182,7 @@
                         <outlet property="postsTableView" destination="A9h-w0-Hbx" id="MGD-3t-reb"/>
                         <outlet property="techInterests" destination="A1J-vG-ZTl" id="W1y-l4-QLJ"/>
                         <outlet property="userNameLabel" destination="Nch-LO-CtA" id="Z0Q-Xu-XaA"/>
+                        <segue destination="GUc-ER-eS8" kind="show" identifier="EditPost" id="zUe-Fw-Gdv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rt1-dR-mEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -385,7 +386,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="THD-yn-3bR">
-                                <rect key="frame" x="10" y="87" width="370" height="123.66666666666669"/>
+                                <rect key="frame" x="10" y="131" width="370" height="123.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsn-wW-RUm">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="29.333333333333332"/>
@@ -393,7 +394,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="body" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-Gy-MXj">
-                                        <rect key="frame" x="0.0" y="29.333333333333329" width="370" height="60"/>
+                                        <rect key="frame" x="0.0" y="29.333333333333343" width="370" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Sg7-OJ-dnF"/>
                                         </constraints>
@@ -420,6 +421,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="3Wl-LI-pjE"/>
+                    <navigationItem key="navigationItem" id="CZE-0A-uz1"/>
                     <connections>
                         <outlet property="bodyLabel" destination="9Zf-Gy-MXj" id="WeG-Ms-n8G"/>
                         <outlet property="titleLabel" destination="wsn-wW-RUm" id="d8S-eS-aCP"/>
@@ -430,15 +432,18 @@
             <point key="canvasLocation" x="909" y="1479"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zUe-Fw-Gdv"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

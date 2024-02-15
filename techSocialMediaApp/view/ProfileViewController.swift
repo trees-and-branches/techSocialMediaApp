@@ -1,9 +1,4 @@
-//
-//  ProfileViewController.swift
-//  techSocialMediaApp
-//
-//  Created by shark boy on 2/5/24.
-//
+
 
 import UIKit
 
@@ -15,6 +10,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let autController = AuthenticationController()
     var profile: Profile?
     var posts: [Post] = []
+    var postToEdit: Post?
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var firstLastLabel: UILabel!
@@ -54,8 +50,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
 //        guard let profile else { return }
-        let destination = segue.destination as! ProfileEditViewController
-        destination.profile = profile
+        if let destination = segue.destination as? ProfileEditViewController {
+            destination.profile = profile
+        } else if let destination = segue.destination as? CreateEditPostViewController {
+            destination.post = postToEdit
+        }
         
     }
     
@@ -84,16 +83,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 extension ProfileViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,22 +92,15 @@ extension ProfileViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         
-        
-        // Check if we need to load more posts
-        
-//        print("\(indexPath.row) indexpath")
-//        if indexPath.row == posts.count - 1, hasMorePosts { // Last cell
-//            let page = (posts.count / 20)
-//            loadMorePosts(for: page)
-//        }
-
-//               else {
-//               hasMorePosts = true
-//           }
         let post = posts[indexPath.row]
         cell.update(with: post)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        postToEdit = posts[indexPath.row]
+        performSegue(withIdentifier: "EditPost", sender: nil)
     }
     
 }

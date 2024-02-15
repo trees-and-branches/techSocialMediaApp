@@ -165,12 +165,39 @@ struct PostController {
     }
     
     func submitPost(title: String, body: String) async throws {
-        var url = URL(string: "\(API.url)/createPost")!
+        let url = URL(string: "\(API.url)/createPost")!
         let session = URLSession.shared
         
         let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
         
         let httpbody: [String: Any] = [ "userSecret" : userSecretValue , "post": [ "title": title, "body": body]]
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.httpBody = try JSONSerialization.data(withJSONObject: httpbody, options: .prettyPrinted)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await session.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ApiError.couldNotPost
+        }
+        
+        let decoder = JSONDecoder()
+        
+        print("post subit response \(try decoder.decode(Post.self,from: data))")
+    }
+    
+    func editPost(_ post: Post, title: String, body: String) async throws {
+        
+        
+        let url = URL(string: "\(API.url)/editPost")!
+        let session = URLSession.shared
+        
+        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        
+        let httpbody: [String: Any] = [ "userSecret" : userSecretValue , "post": ["postID": String(post.id), "title": title, "body": body]]
         
         var request = URLRequest(url: url)
         

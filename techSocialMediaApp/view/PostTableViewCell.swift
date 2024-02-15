@@ -12,6 +12,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postBodyLabel: UILabel!
     @IBOutlet weak var postIDLabel: UILabel!
+    @IBOutlet weak var postDateLabel: UILabel!
     
     @IBOutlet weak var postLikesLabel: UILabel!
     
@@ -38,6 +39,7 @@ class PostTableViewCell: UITableViewCell {
         postTitleLabel.text = post.title
         postBodyLabel.text = post.body
         postIDLabel.text = String(post.id)
+        postDateLabel.text = post.createdDate
         
         postLikeButton.isHighlighted = post.userLiked
         

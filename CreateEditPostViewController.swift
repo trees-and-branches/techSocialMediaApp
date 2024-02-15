@@ -12,9 +12,15 @@ class CreateEditPostViewController: UIViewController {
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var bodyLabel: UITextField!
     
+    var post: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let postToEdit = post {
+            titleLabel.text = postToEdit.title
+            bodyLabel.text = postToEdit.body
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -22,21 +28,20 @@ class CreateEditPostViewController: UIViewController {
 
     @IBAction func submitTapped(_ sender: Any) {
         
+
         if let title = titleLabel.text, let body = bodyLabel.text {
-            Task {
-               try await PostController.shared.submitPost(title: title, body: body)
+            if let postToEdit = post {
+                Task {
+                    try await PostController.shared.editPost(postToEdit, title: title, body: body)
+                }
+            } else {
+                Task {
+                    try await PostController.shared.submitPost(title: title, body: body)
+                }
             }
+            
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
