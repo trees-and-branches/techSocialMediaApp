@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         
         emailTextField.text = "EVAN.OCHOA4872@STU.MTEC.EDU"
         passwordTextField.text = "e5ed61c6-c8f9-4818-97f5-315799df25ac"
-        signInButtonTapped([])
+//        signInButtonTapped([])
         #endif
         
     }

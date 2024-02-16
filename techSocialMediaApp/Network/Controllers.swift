@@ -7,9 +7,10 @@
 
 import Foundation
 
-enum ApiError: Error {
+enum ApiError: Error, LocalizedError {
     case couldNotFetch
     case couldNotPost
+    case couldNotDelete
 }
 
 struct ProfileController {  // I would like to Create a generic protocol for this fetching business
@@ -51,7 +52,7 @@ struct ProfileController {  // I would like to Create a generic protocol for thi
     
     func updateProfile(for profile: Profile) async throws { // TODO: find out why the nil coalescing isnt working here
         guard let user = User.current else { return }
-        var url = URL(string: "\(API.url)/updateProfile")!
+        let url = URL(string: "\(API.url)/updateProfile")!
         let session = URLSession.shared
         
         let userSecretValue = user.secret.uuidString 
@@ -191,17 +192,17 @@ struct PostController {
     
     func editPost(_ post: Post, title: String, body: String) async throws {
         
-        
         let url = URL(string: "\(API.url)/editPost")!
         let session = URLSession.shared
         
         let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
         
-        let httpbody: [String: Any] = [ "userSecret" : userSecretValue , "post": ["postID": String(post.id), "title": title, "body": body]]
+        let httpbody: [String: Any] = [ "userSecret" : userSecretValue , "post": ["postid": String(post.id), "title": title, "body": body]]
         
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
+        
         request.httpBody = try JSONSerialization.data(withJSONObject: httpbody, options: .prettyPrinted)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -211,8 +212,32 @@ struct PostController {
             throw ApiError.couldNotPost
         }
         
-        let decoder = JSONDecoder()
-        
-        print("post subit response \(try decoder.decode(Post.self,from: data))")
     }
+    func deletePost(_ id: Int) async throws {
+        var url = URL(string: "\(API.url)/post")!
+        let session = URLSession.shared
+        
+        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
+        let postIDQI = URLQueryItem(name: "postid", value: String(id))
+        
+        url.append(queryItems: [postIDQI, secretQI])
+        
+        print(url)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await session.data(for: request)
+        
+        // Ensure we had a good response (status 200)
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ApiError.couldNotDelete
+        }
+        
+
+    }
+    
+     
 }

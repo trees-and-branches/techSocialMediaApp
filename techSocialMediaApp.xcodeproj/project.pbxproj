@@ -127,7 +127,6 @@
 				A3C2D4CA2908293800C0AF5F /* Network */,
 				A3DFFA472901B8F400A28B8C /* AppDelegate.swift */,
 				A3DFFA492901B8F400A28B8C /* SceneDelegate.swift */,
-				A3DFFA4B2901B8F400A28B8C /* LoginViewController.swift */,
 				EA712ACD2B73D57E00C8C6C9 /* view */,
 				A3DFFA4D2901B8F400A28B8C /* Main.storyboard */,
 				A3DFFA502901B8F500A28B8C /* Assets.xcassets */,
@@ -148,6 +147,7 @@
 		EA712ACD2B73D57E00C8C6C9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A3DFFA4B2901B8F400A28B8C /* LoginViewController.swift */,
 				EA712AC72B72A04F00C8C6C9 /* PostTableViewCell.swift */,
 				EA712AC92B72A16400C8C6C9 /* PostsViewController.swift */,
 				EA712ABF2B714EFC00C8C6C9 /* ProfileViewController.swift */,
