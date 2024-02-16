@@ -34,10 +34,15 @@ class CreateEditPostViewController: UIViewController {
                 Task {
                     try await PostController.shared.editPost(postToEdit, title: title, body: body)
                 }
+//                performSegue(withIdentifier: "ToProfile", sender: nil)
+                
             } else {
                 Task {
                     try await PostController.shared.submitPost(title: title, body: body)
+                    
                 }
+//                performSegue(withIdentifier: "ToPosts", sender: nil)
+                tabBarController?.selectedIndex = 0
             }
             
         }

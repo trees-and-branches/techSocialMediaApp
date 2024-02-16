@@ -42,6 +42,10 @@ class PostsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        postsTableView.reloadData()
+    }
+    
 
 }
 
@@ -104,36 +108,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
 
-//    private func loadMorePosts(for page: Int?, for indexPath: IndexPath) {
-////           guard !isFetchingPosts, !hasMorePosts else { return }
-//
-//           isFetchingPosts = true
-//
-//           Task {
-//               do {
-//                   let newPosts = try await PostController.shared.fetchPosts(for: page) // Adjust parameters as necessary
-//                   DispatchQueue.main.async {
-////                       guard let self = self else { return }
-//                       if newPosts.isEmpty {
-//                           self.hasMorePosts = false
-//                       } else {
-//                           self.posts.append(contentsOf: newPosts)
-////                           print(posts)
-//                           
-////                           let indexPathInsert = self.posts.count as! IndexPath
-//                           
-//                           self.postsTableView.insertRows(at: [indexPath], with: .bottom)
-//                           self.postsTableView.reloadRows(at: [indexPath], with: .automatic)
-//                           self.postsTableView.reloadData()
-//                       }
-//                       self.isFetchingPosts = false
-//                   }
-//               } catch {
-//                   self.isFetchingPosts = false
-//                   // Handle error (e.g., show an alert or a toast message)
-//               }
-//           }
-//       }
+
    }
 
 
@@ -169,6 +144,36 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
 //}
 //
 //}
+//    private func loadMorePosts(for page: Int?, for indexPath: IndexPath) {
+////           guard !isFetchingPosts, !hasMorePosts else { return }
+//
+//           isFetchingPosts = true
+//
+//           Task {
+//               do {
+//                   let newPosts = try await PostController.shared.fetchPosts(for: page) // Adjust parameters as necessary
+//                   DispatchQueue.main.async {
+////                       guard let self = self else { return }
+//                       if newPosts.isEmpty {
+//                           self.hasMorePosts = false
+//                       } else {
+//                           self.posts.append(contentsOf: newPosts)
+////                           print(posts)
+//
+////                           let indexPathInsert = self.posts.count as! IndexPath
+//
+//                           self.postsTableView.insertRows(at: [indexPath], with: .bottom)
+//                           self.postsTableView.reloadRows(at: [indexPath], with: .automatic)
+//                           self.postsTableView.reloadData()
+//                       }
+//                       self.isFetchingPosts = false
+//                   }
+//               } catch {
+//                   self.isFetchingPosts = false
+//                   // Handle error (e.g., show an alert or a toast message)
+//               }
+//           }
+//       }
 
     
 

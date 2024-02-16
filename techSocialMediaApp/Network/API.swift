@@ -16,5 +16,14 @@ struct API {
 //    let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
 //
     // I want to make this a static variable so I don't have to repeat it in all of my methods
+    
+    //TODO: DO THIS
 }
+
+enum ApiError: Error, LocalizedError {
+   case couldNotFetch
+   case couldNotPost
+   case couldNotDelete
+}
+
 

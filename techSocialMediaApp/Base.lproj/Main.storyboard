@@ -23,7 +23,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BaZ-YJ-XnU">
                                         <rect key="frame" x="0.0" y="211.66666666666669" width="350" height="280"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tech Social Media App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRq-d8-VqU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x.comTwitterbook" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRq-d8-VqU">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="27.666666666666668"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <nil key="textColor"/>
@@ -266,7 +266,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgb-8t-jpO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="743"/>
+            <point key="canvasLocation" x="952" y="743"/>
         </scene>
         <!--postsViewController-->
         <scene sceneID="GJG-NN-lqd">
@@ -349,20 +349,21 @@
                             <constraint firstItem="oxe-2z-2Ko" firstAttribute="leading" secondItem="alB-kA-aDA" secondAttribute="leading" id="zMa-hn-ith"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7rn-jn-Fb1"/>
+                    <tabBarItem key="tabBarItem" title="Posts" image="message" catalog="system" selectedImage="message.fill" id="7rn-jn-Fb1"/>
+                    <navigationItem key="navigationItem" id="AdG-43-nY4"/>
                     <connections>
                         <outlet property="postsTableView" destination="oxe-2z-2Ko" id="UvI-vr-8UR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdj-aU-7FL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2400" y="1478.6729857819905"/>
+            <point key="canvasLocation" x="-49" y="1520"/>
         </scene>
-        <!--Item-->
+        <!--profile-->
         <scene sceneID="ggU-rk-9B6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZNs-7s-Ybs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="nTG-v8-Kr6"/>
+                    <tabBarItem key="tabBarItem" title="profile" image="person" selectedImage="person.fill" catalog="system" id="nTG-v8-Kr6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JGI-1j-wgz">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -377,7 +378,7 @@
             </objects>
             <point key="canvasLocation" x="3047.6923076923076" y="742.89099526066343"/>
         </scene>
-        <!--Item-->
+        <!--Tweet-->
         <scene sceneID="Ybq-A3-9qv">
             <objects>
                 <viewController id="GUc-ER-eS8" customClass="CreateEditPostViewController" customModule="techSocialMediaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -386,7 +387,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="THD-yn-3bR">
-                                <rect key="frame" x="10" y="131" width="370" height="123.66666666666669"/>
+                                <rect key="frame" x="10" y="87" width="370" height="123.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsn-wW-RUm">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="29.333333333333332"/>
@@ -394,7 +395,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="body" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-Gy-MXj">
-                                        <rect key="frame" x="0.0" y="29.333333333333343" width="370" height="60"/>
+                                        <rect key="frame" x="0.0" y="29.333333333333329" width="370" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Sg7-OJ-dnF"/>
                                         </constraints>
@@ -407,6 +408,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="submit"/>
                                         <connections>
                                             <action selector="submitTapped:" destination="GUc-ER-eS8" eventType="touchUpInside" id="0he-Fd-aQ1"/>
+                                            <segue destination="y6K-5o-Bag" kind="unwind" unwindAction="postChangesAndUnwindWithSender:" id="qlQ-YG-5H3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -420,7 +422,7 @@
                             <constraint firstItem="THD-yn-3bR" firstAttribute="leading" secondItem="Ylp-Od-YZx" secondAttribute="leading" constant="10" id="V3s-R8-Gdi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="3Wl-LI-pjE"/>
+                    <tabBarItem key="tabBarItem" title="Tweet" image="paperplane" catalog="system" selectedImage="paperplane.fill" id="3Wl-LI-pjE"/>
                     <navigationItem key="navigationItem" id="CZE-0A-uz1"/>
                     <connections>
                         <outlet property="bodyLabel" destination="9Zf-Gy-MXj" id="WeG-Ms-n8G"/>
@@ -428,22 +430,29 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xm-Lg-TkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="y6K-5o-Bag" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="909" y="1479"/>
+            <point key="canvasLocation" x="1785" y="1645"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zUe-Fw-Gdv"/>
+        <segue reference="yAA-zD-FQF"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="message" catalog="system" width="128" height="116"/>
+        <image name="message.fill" catalog="system" width="128" height="114"/>
+        <image name="paperplane" catalog="system" width="128" height="119"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
+        <image name="person" width="128" height="128"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

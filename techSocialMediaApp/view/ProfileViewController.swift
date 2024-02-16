@@ -6,12 +6,12 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-//    let profileController = ProfileController()
+    //    let profileController = ProfileController()
     let autController = AuthenticationController()
     var profile: Profile?
     var posts: [Post] = []
     var postToEdit: Post?
-
+    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var firstLastLabel: UILabel!
     
@@ -43,13 +43,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print(error)
             }
         }
-
+        
         // Do any additional setup after loading the view.
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        guard let profile else { return }
+        //        guard let profile else { return }
         if let destination = segue.destination as? ProfileEditViewController {
             destination.profile = profile
         } else if let destination = segue.destination as? CreateEditPostViewController {
@@ -77,13 +78,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 updateUI(with: profile)
             }
             
-            
         }
-        
-
+        postsTableView.reloadData()
     }
-
 }
+            
 extension ProfileViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
