@@ -17,7 +17,7 @@ struct ProfileController {  // I would like to Create a generic protocol for thi
         let session = URLSession.shared
         
         let userQI = URLQueryItem(name: "userUUID", value: userID)
-        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let userSecretValue = User.current?.secret ?? "defaultSecret"
         let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
         
         var url = URL(string: "\(API.url)/userProfile")!
@@ -45,12 +45,12 @@ struct ProfileController {  // I would like to Create a generic protocol for thi
         
     }
     
-    func updateProfile(for profile: Profile) async throws { // TODO: find out why the nil coalescing isnt working here
+    func updateProfile(for profile: Profile) async throws {
         guard let user = User.current else { return }
         let url = URL(string: "\(API.url)/updateProfile")!
         let session = URLSession.shared
         
-        let userSecretValue = user.secret.uuidString 
+        let userSecretValue = user.secret
         
         var request = URLRequest(url: url)
         

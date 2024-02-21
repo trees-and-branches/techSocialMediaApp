@@ -130,7 +130,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TechInterests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1J-vG-ZTl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TechInterests" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1J-vG-ZTl">
                                         <rect key="frame" x="0.0" y="70.666666666666657" width="102.66666666666667" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -363,7 +363,7 @@
         <scene sceneID="ggU-rk-9B6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZNs-7s-Ybs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="profile" image="person" selectedImage="person.fill" catalog="system" id="nTG-v8-Kr6"/>
+                    <tabBarItem key="tabBarItem" title="profile" image="person" catalog="system" selectedImage="person.fill" id="nTG-v8-Kr6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JGI-1j-wgz">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -387,7 +387,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="THD-yn-3bR">
-                                <rect key="frame" x="10" y="87" width="370" height="123.66666666666669"/>
+                                <rect key="frame" x="10" y="131" width="370" height="123.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsn-wW-RUm">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="29.333333333333332"/>
@@ -395,7 +395,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="body" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-Gy-MXj">
-                                        <rect key="frame" x="0.0" y="29.333333333333329" width="370" height="60"/>
+                                        <rect key="frame" x="0.0" y="29.333333333333343" width="370" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Sg7-OJ-dnF"/>
                                         </constraints>
@@ -436,14 +436,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yAA-zD-FQF"/>
+        <segue reference="zUe-Fw-Gdv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="message" catalog="system" width="128" height="116"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="paperplane" catalog="system" width="128" height="119"/>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
-        <image name="person" width="128" height="128"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

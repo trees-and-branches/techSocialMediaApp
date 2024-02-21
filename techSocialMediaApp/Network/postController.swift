@@ -24,7 +24,7 @@ struct PostController {
         var url = URL(string: "\(API.url)/posts")!
         let session = URLSession.shared
         
-        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+            let userSecretValue = User.current?.secret ?? "defaultSecret"
         let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
         let pageNumberQI = URLQueryItem(name: "pageNumber", value: pageString)
         url.append(queryItems: [secretQI, pageNumberQI])
@@ -56,7 +56,7 @@ struct PostController {
         let session = URLSession.shared
         
         let userQI = URLQueryItem(name: "userUUID", value: userID)
-        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let userSecretValue = User.current?.secret ?? "defaultSecret"
         let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
         
         if let pageNum {
@@ -92,7 +92,7 @@ struct PostController {
         let url = URL(string: "\(API.url)/createPost")!
         let session = URLSession.shared
         
-        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let userSecretValue = User.current?.secret ?? "defaultSecret"
         
         let httpbody: [String: Any] = [ "userSecret" : userSecretValue , "post": [ "title": title, "body": body]]
         
@@ -118,7 +118,7 @@ struct PostController {
         let url = URL(string: "\(API.url)/editPost")!
         let session = URLSession.shared
         
-        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let userSecretValue = User.current?.secret ?? "defaultSecret"
         
         let httpbody: [String: Any] = [ "userSecret" : userSecretValue , "post": ["postid": String(post.id), "title": title, "body": body]]
         
@@ -136,11 +136,12 @@ struct PostController {
         }
         
     }
+    
     func deletePost(_ id: Int) async throws {
         var url = URL(string: "\(API.url)/post")!
         let session = URLSession.shared
         
-        let userSecretValue = User.current?.secret.uuidString ?? "defaultSecret"
+        let userSecretValue = User.current?.secret ?? "defaultSecret"
         let secretQI = URLQueryItem(name: "userSecret", value: userSecretValue)
         let postIDQI = URLQueryItem(name: "postid", value: String(id))
         
@@ -158,8 +159,6 @@ struct PostController {
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw ApiError.couldNotDelete
         }
-        
-
     }
     
      

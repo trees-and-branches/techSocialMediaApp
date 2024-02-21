@@ -28,17 +28,30 @@ class ProfileEditViewController: UIViewController {
 
     func updateProfile() async throws {
         // Unwrap `profile` at the beginning and use it directly inside the block.
-        guard let profile = self.profile,
-              let userName = userNameTextfield.text,
-              let bio = bioTextField.text,
-              let techInterests = techInterestsTextField.text
+        guard let profile = self.profile
+                //              let userName = userNameTextfield.text,
+                //              let bio = bioTextField.text,
+                //              let techInterests = techInterestsTextField.text
         else { return }
         var theProfile = profile
-
+        
         // Now `profile` is unwrapped, and you can safely access and modify its properties.
-        theProfile.userName = userName
-        theProfile.bio = bio
-        theProfile.techInterests = techInterests
+        if let userName = userNameTextfield.text, !userName.isEmpty {
+            theProfile.userName = userName
+        } else {
+            print(profile.userName)
+            theProfile.userName = userNameTextfield.placeholder!
+        }
+        if let bio = bioTextField.text, !bio.isEmpty {
+            theProfile.bio = bio
+        } else {
+            theProfile.bio = bioTextField.placeholder!
+        }
+        if let techInterests = techInterestsTextField.text, !techInterests.isEmpty{
+            theProfile.techInterests = techInterests
+        } else {
+            theProfile.techInterests = techInterestsTextField.placeholder!
+        }
 
         // Since `profile` is already unwrapped, you can directly use it in the function call.
         try await ProfileController.shared.updateProfile(for: theProfile)

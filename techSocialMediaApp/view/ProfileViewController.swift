@@ -30,13 +30,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         postsTableView.delegate = self
         
         Task {
-            do {
-                profile = try await ProfileController.shared.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
-                updateUI(with: profile)
-                
-                let initialPosts = try await PostController.shared.fetchPosts(for: "EE9E0B40-791B-4730-B783-0B2B8C09AB20", nil) // gotta actually get the value instead of hardcoding this... later
-                posts += initialPosts
-                postsTableView.reloadData()
+                do {
+                    
+                    if let user = User.current?.userUUID {
+                        
+                        profile = try await ProfileController.shared.fetchProfile(for:user)
+                        updateUI(with: profile)
+                        
+                        let initialPosts = try await PostController.shared.fetchPosts(for:user, nil) // gotta actually get the value instead of hardcoding this... later
+                        posts = initialPosts
+                        
+                    }
+                    postsTableView.reloadData()
                 
                 
             } catch {
@@ -45,6 +50,30 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        Task {
+            do {
+                if let user = User.current?.userUUID {
+                    
+                    profile = try await ProfileController.shared.fetchProfile(for:user)
+                    updateUI(with: profile)
+                    
+                    let initialPosts = try await PostController.shared.fetchPosts(for:user, nil) // gotta actually get the value instead of hardcoding this... later
+                    posts = initialPosts
+                    
+                }
+                postsTableView.reloadData()
+                
+                
+            } catch {
+                print(error)
+            }
+        }
+        
     }
     
     
@@ -74,12 +103,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             Task {
                 try await profileEditViewController.updateProfile()
                 
-                profile = try await ProfileController.shared.fetchProfile(for:"EE9E0B40-791B-4730-B783-0B2B8C09AB20")
-                updateUI(with: profile)
-            }
+                if let user = User.current?.userUUID {
+                    profile = try await ProfileController.shared.fetchProfile(for:user)
+                    updateUI(with: profile)
+                }
+                    
+                }
             
         }
-        postsTableView.reloadData()
+        
     }
 }
             
