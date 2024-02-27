@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         profile = try await ProfileController.shared.fetchProfile(for:user)
                         updateUI(with: profile)
                         
-                        let initialPosts = try await PostController.shared.fetchPosts(for:user, nil) // gotta actually get the value instead of hardcoding this... later
+                        let initialPosts = try await PostsController.shared.fetchPosts(for:user, nil) // gotta actually get the value instead of hardcoding this... later
                         posts = initialPosts
                         
                     }
@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     profile = try await ProfileController.shared.fetchProfile(for:user)
                     updateUI(with: profile)
                     
-                    let initialPosts = try await PostController.shared.fetchPosts(for:user, nil) // gotta actually get the value instead of hardcoding this... later
+                    let initialPosts = try await PostsController.shared.fetchPosts(for:user, nil) // gotta actually get the value instead of hardcoding this... later
                     posts = initialPosts
                     
                 }
@@ -146,7 +146,7 @@ extension ProfileViewController {
             
             Task {
                 
-                try await PostController.shared.deletePost(deletedID)
+                try await PostsController.shared.deletePost(deletedID)
             }
             
             

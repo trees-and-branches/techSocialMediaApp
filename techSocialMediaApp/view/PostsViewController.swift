@@ -30,12 +30,12 @@ class PostsViewController: UIViewController {
         
         Task {
             do {
-                let initialPosts = try await PostController.shared.fetchPosts(for: nil)
+                let initialPosts = try await PostsController.shared.fetchPosts(for: nil)
                 posts += initialPosts
+                
                 DispatchQueue.main.async {
                     self.postsTableView.reloadData()
                 }
-            } catch {
                 
             }
         }
@@ -58,24 +58,19 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
            
-           
            // Check if we need to load more posts
-           
            print("\(indexPath.row) indexpath")
-           if indexPath.row == posts.count - 1, hasMorePosts { // Last cell
+           if indexPath.row == posts.count - 1 { // Last cell
                let page = (posts.count / 20)
                loadMorePosts(for: page)
            }
-
-//               else {
-//               hasMorePosts = true
-//           }
+           
            let post = posts[indexPath.row]
            cell.update(with: post)
            
            return cell
        }
-// TODO: this function, or it's callers must be fixed so the bottom of the posts page doesn't keep populating with the same posts
+    
         private func loadMorePosts(for page: Int) {
             guard !isFetchingPosts, hasMorePosts else { return }
             
@@ -83,7 +78,14 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
 
             Task {
                 do {
-                    let newPosts = try await PostController.shared.fetchPosts(for: page)
+                    let newPosts = try await PostsController.shared.fetchPosts(for: page)
+                    
+                    print("printing \(page) with \(newPosts.count)")
+                    
+                    if newPosts.count < 20 {
+                        hasMorePosts = false
+                    }
+                    
                     DispatchQueue.main.async {
                         if newPosts.isEmpty {
                             self.hasMorePosts = false

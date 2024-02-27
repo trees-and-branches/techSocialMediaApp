@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct PostController {
-    static let shared = PostController()
+struct PostsController {
+    static let shared = PostsController()
     
     
     // https://tech-social-media-app.fly.dev/posts?userSecret=911A6300-DC3E-4737-9C19-6943CC7D4A88&pageNumber

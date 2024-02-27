@@ -32,13 +32,13 @@ class CreateEditPostViewController: UIViewController {
         if let title = titleLabel.text, let body = bodyLabel.text {
             if let postToEdit = post {
                 Task {
-                    try await PostController.shared.editPost(postToEdit, title: title, body: body)
+                    try await PostsController.shared.editPost(postToEdit, title: title, body: body)
                 }
 //                performSegue(withIdentifier: "ToProfile", sender: nil)
                 
             } else {
                 Task {
-                    try await PostController.shared.submitPost(title: title, body: body)
+                    try await PostsController.shared.submitPost(title: title, body: body)
                     
                 }
 //                performSegue(withIdentifier: "ToPosts", sender: nil)
